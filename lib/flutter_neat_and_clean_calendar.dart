@@ -1521,7 +1521,7 @@ class _CalendarState extends State<Calendar> {
         ),
         child: Column(children: <Widget>[
           GridView.count(
-            childAspectRatio: 1.5,
+            childAspectRatio: 1,
             primary: false,
             shrinkWrap: true,
             crossAxisCount: 7,
@@ -1691,6 +1691,8 @@ class _CalendarState extends State<Calendar> {
             // Create a list of events that are occurring on the currently selected day, if there are
             // any. Otherwise, display an empty Container.
             ? ListView.builder(
+                shrinkWrap: false,
+                physics: ClampingScrollPhysics(),
                 padding: EdgeInsets.all(0.0),
                 itemBuilder: (BuildContext context, int index) {
                   final NeatCleanCalendarEvent event = _selectedEvents![index];
