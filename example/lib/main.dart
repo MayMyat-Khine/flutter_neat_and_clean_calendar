@@ -25,7 +25,7 @@ class CalendarScreen extends StatefulWidget {
 
 class _CalendarScreenState extends State<CalendarScreen> {
   List<NeatCleanCalendarEvent> _todaysEvents = [
-    NeatCleanCalendarEvent('Event A',
+    NeatCleanCalendarEvent(1, 'Event A',
         startTime: DateTime(DateTime.now().year, DateTime.now().month,
             DateTime.now().day, 10, 0),
         endTime: DateTime(DateTime.now().year, DateTime.now().month,
@@ -35,7 +35,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   ];
 
   final List<NeatCleanCalendarEvent> _eventList = [
-    NeatCleanCalendarEvent('MultiDay Event A',
+    NeatCleanCalendarEvent(2, 'MultiDay Event A',
         description: 'test desc',
         startTime: DateTime(DateTime.now().year, DateTime.now().month,
             DateTime.now().day, 10, 0),
@@ -43,7 +43,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             DateTime.now().day + 2, 12, 0),
         color: Colors.orange,
         isMultiDay: true),
-    NeatCleanCalendarEvent('Allday Event B',
+    NeatCleanCalendarEvent(3, 'Allday Event B',
         description: 'test desc',
         startTime: DateTime(DateTime.now().year, DateTime.now().month,
             DateTime.now().day - 2, 14, 30),
@@ -51,14 +51,14 @@ class _CalendarScreenState extends State<CalendarScreen> {
             DateTime.now().day + 2, 17, 0),
         color: Colors.pink,
         isAllDay: true),
-    NeatCleanCalendarEvent('Normal Event D',
-        description: 'test desc',  
+    NeatCleanCalendarEvent(4, 'Normal Event D',
+        description: 'test desc',
         startTime: DateTime(DateTime.now().year, DateTime.now().month,
             DateTime.now().day, 14, 30),
         endTime: DateTime(DateTime.now().year, DateTime.now().month,
             DateTime.now().day, 17, 0),
         color: Colors.indigo),
-    NeatCleanCalendarEvent('Normal Event E',
+    NeatCleanCalendarEvent(5, 'Normal Event E',
         description: 'test desc',
         startTime: DateTime(DateTime.now().year, DateTime.now().month,
             DateTime.now().day, 7, 45),
