@@ -7,6 +7,7 @@ enum MultiDaySegement {
 }
 
 class NeatCleanCalendarEvent {
+  int id;
   String summary;
   String description;
   String location;
@@ -19,7 +20,7 @@ class NeatCleanCalendarEvent {
   bool isDone;
   Map<String, dynamic>? metadata;
 
-  NeatCleanCalendarEvent(this.summary,
+  NeatCleanCalendarEvent(this.id, this.summary,
       {this.description = '',
       this.location = '',
       required this.startTime,
