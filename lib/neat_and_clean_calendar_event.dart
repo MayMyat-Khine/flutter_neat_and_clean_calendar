@@ -11,8 +11,8 @@ class NeatCleanCalendarEvent {
   String summary;
   String description;
   String location;
-  DateTime startTime;
-  DateTime endTime;
+  String startTime;
+  String endTime;
   Color? color;
   bool isAllDay;
   bool isMultiDay;
