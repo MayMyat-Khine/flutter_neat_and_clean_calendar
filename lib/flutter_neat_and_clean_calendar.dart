@@ -1697,9 +1697,9 @@ class _CalendarState extends State<Calendar> {
                 itemBuilder: (BuildContext context, int index) {
                   final NeatCleanCalendarEvent event = _selectedEvents![index];
                   final String start =
-                      DateFormat('HH:mm').format(event.startTime).toString();
+                      DateFormat('hh:mm a').format(event.startTime).toString();
                   final String end =
-                      DateFormat('HH:mm').format(event.endTime).toString();
+                      DateFormat('hh:mm a').format(event.endTime).toString();
                   return Container(
                     height: widget.eventTileHeight ??
                         MediaQuery.of(context).size.height * 0.075,
@@ -1788,8 +1788,8 @@ class _CalendarState extends State<Calendar> {
 
   Column allOrMultiDayDayTimeWidget(NeatCleanCalendarEvent event) {
     print('=== Summary: ${event.summary}');
-    String start = DateFormat('HH:mm').format(event.startTime).toString();
-    String end = DateFormat('HH:mm').format(event.endTime).toString();
+    String start = DateFormat('hh:mm a').format(event.startTime).toString();
+    String end = DateFormat('hh:mm a').format(event.endTime).toString();
     if (event.isAllDay) {
       print('AllDayEvent - ${event.summary}');
       return Column(
