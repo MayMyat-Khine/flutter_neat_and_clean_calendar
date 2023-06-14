@@ -501,7 +501,8 @@ class _CalendarState extends State<Calendar> {
                             ),
                           ), //&& widget.isViewMom!
                           (event.color == Colors.green &&
-                                  hasAccessList.contains(index))
+                                  hasAccessList
+                                      .contains(_selectedEvents![index].id))
                               ? IconButton(
                                   onPressed: () {},
                                   icon: Icon(Icons.receipt_long_outlined))
