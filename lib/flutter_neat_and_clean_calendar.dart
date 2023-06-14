@@ -64,6 +64,7 @@ class Calendar extends StatefulWidget {
   final TextStyle? displayMonthTextStyle;
   final DatePickerConfig? datePickerConfig;
   final double? eventTileHeight;
+  final List<int>? hasAccessListfinal;
 
   Calendar({
     this.onMonthChanged,
@@ -74,6 +75,7 @@ class Calendar extends StatefulWidget {
     this.hideBottomBar: false,
     this.isExpandable: false,
     this.events,
+    this.hasAccessListfinal,
     this.eventsList,
     this.dayBuilder,
     this.eventListBuilder,
@@ -120,10 +122,13 @@ class _CalendarState extends State<Calendar> {
   String displayMonth = '';
   DateTime get selectedDate => _selectedDate;
   List<NeatCleanCalendarEvent>? _selectedEvents;
+  List<int> hasAccessList = [];
 
   void initState() {
     super.initState();
     isExpanded = widget.isExpanded;
+    if (widget.hasAccessListfinal!.isNotEmpty)
+      hasAccessList = widget.hasAccessListfinal!;
 
     _selectedDate = widget.initialDate ?? DateTime.now();
     initializeDateFormatting(widget.locale, null).then((_) => setState(() {
@@ -494,10 +499,13 @@ class _CalendarState extends State<Calendar> {
                                 ],
                               ),
                             ),
-                          ),
-                          // IconButton(
-                          //     onPressed: () {},
-                          //     icon: Icon(Icons.receipt_long_outlined)),
+                          ), //&& widget.isViewMom!
+                          (event.color == Colors.green &&
+                                  hasAccessList.contains(index))
+                              ? IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.receipt_long_outlined))
+                              : Container(),
                           Expanded(
                             flex: 30,
                             child: Padding(
