@@ -22,6 +22,7 @@ class NeatCleanCalendarEvent {
   Map<String, dynamic>? metadata;
   Function? function;
   String? roomName;
+  String? meetingDate;
 
   NeatCleanCalendarEvent(this.id, this.summary,
       {this.description = '',
@@ -35,5 +36,6 @@ class NeatCleanCalendarEvent {
       multiDaySegement,
       this.metadata,
       this.function,
-      this.roomName});
+      this.roomName,
+      this.meetingDate});
 }
